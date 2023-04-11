@@ -1,0 +1,75 @@
+@use 'variables' as v;
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    font-family: v.$fuentePrincipal;
+
+    &.fijar-body {  //Esta clase se agrega solo cuando la imagen esta en pantalla completa con overlay
+        overflow: hidden;  //Detiene el scroll
+    }
+
+    &.body-scroll{
+        padding-top: 8.6rem;  //El 8.6 es lo que mide la barra de navegacion
+        //Se complementa con volver a dar estilo a la barra de navegacion
+    }
+}
+
+p{
+    font-size: 2rem;
+    color: v.$negro;
+    line-height: 1.5;
+}
+
+.contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;  //Centra
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3{
+    margin: 0 0 5rem 0;  //5rem hacia abajo
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.6rem;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;    
+    height: auto;
+    display: block;
+}
+
+.bg-amarillo{
+    background-color: v.$amarillo;
+}
+
+.bg-verde{
+    background-color: v.$verde;
+}
+
+.no-margin{
+    margin: 0;
+}

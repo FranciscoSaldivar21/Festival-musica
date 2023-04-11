@@ -1,0 +1,9 @@
+@forward 'variables';
+@forward 'mixins';
+@forward 'normalize';
+@forward 'globales';
+
+//npm i --save-dev cssnano autoprefixer postcss gulp-postcss Es libreria para mejorar codigo css
+//npm i --save-dev gulp-sourcemaps es para poder leer el código css despues de que se simplificó
+
+//gulp sass es para compilar los estilos

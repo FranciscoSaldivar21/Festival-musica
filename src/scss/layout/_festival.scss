@@ -1,0 +1,31 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.sobre-festival{
+    padding: 5rem 0;
+
+    @include m.tablet {
+        @include m.grid(2, 5rem);  //Se manda llamar el mixi de grid con 2 columnas y gap de 5rem
+    }
+}
+
+.contenido-festival{
+    @include m.tablet{
+        h2{
+            margin-top: 0; //En dispositivos como tablet o mas grandes hace que se elimine el margin-top que se aplica en la linea 22
+        }
+    }
+
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    h2{
+        margin-bottom: 2rem;
+    }
+
+    .fecha{
+        color: v.$rosa;
+        font-weight: bold;
+    }
+}

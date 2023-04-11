@@ -1,0 +1,61 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header { 
+    background-color: v.$verde;
+
+    @include m.tablet {  //Cuando sea de igual o mayor tamaño la pantalla se hace esto
+        //Esto es para mantener el menu arriba pese al scroll
+        &.fijo{  //&Hace referencia al elemento padre del actual
+            left: 0;
+            top: 0; //Estas lineas hacen que la navegacion se coloque hasta la esquina superiror izquierda, esto debido a los cambios en el body para el scroll
+            position: fixed;
+            width: 100%;
+            box-shadow: inset 0 0 10px gold;
+        } 
+    }
+
+    h1{
+        color: v.$blanco;
+        text-align: center;
+
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+
+    .contenido-header {
+        padding: 2rem;
+        @include m.tablet {
+            display:flex;   //Hace que los elementos se coloquen uno despues de otro
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.navegacion-principal{
+    @include m.tablet {
+        display: flex;   //Hace que los enlaces de vean de izquierda a derecha
+        gap: 2rem
+    }
+    a {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        @include m.tablet {
+            margin: 0;
+        }
+
+        &:hover{ //Elimina el espacio para unir en css y evitar el espacio
+            color: v.$amarillo;
+        }
+    }
+    // a:hover {
+    //     color: v.$amarillo;
+    // }
+}
+
+//@include m.heading;   //Mixins
